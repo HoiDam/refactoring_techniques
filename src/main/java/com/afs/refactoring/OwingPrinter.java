@@ -20,15 +20,9 @@ public class OwingPrinter {
     }
 
     private int calculateOutstanding(List<Order> orders) {
-        Iterator<Order> elements = orders.iterator();
-        int outstanding = 0;
-
-        // print owing
-        while (elements.hasNext()) {
-            Order each = (Order) elements.next();
-            outstanding += each.getAmount();
-        }
-        return outstanding;
+        return orders.stream()
+                .mapToInt(order->order.getAmount())
+                .sum();
     }
 }
 
