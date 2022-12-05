@@ -8,15 +8,18 @@ public class OwingPrinter {
         int outstanding = calculateOutstanding(orders);
 
         // print banner
-        System.out.println ("*****************************");
-        System.out.println ("****** Customer totals ******");
-        System.out.println ("*****************************");
-
+        showHeader();
 
 
         // print details
         System.out.println("name: " + name);
         System.out.println("amount: " + outstanding);
+    }
+
+    private static void showHeader() {
+        System.out.println ("*****************************");
+        System.out.println ("****** Customer totals ******");
+        System.out.println ("*****************************");
     }
 
     private int calculateOutstanding(List<Order> orders) {
