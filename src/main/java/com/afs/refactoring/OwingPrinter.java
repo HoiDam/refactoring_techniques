@@ -12,6 +12,10 @@ public class OwingPrinter {
 
 
         // print details
+        showContent(name, outstanding);
+    }
+
+    private static void showContent(String name, int outstanding) {
         System.out.println("name: " + name);
         System.out.println("amount: " + outstanding);
     }
